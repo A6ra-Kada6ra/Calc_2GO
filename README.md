@@ -16,36 +16,36 @@
 - Подробное логирование всех операций
 
 ## Структура проекта
-*CALC_2GO/
-*├── api/ # Protobuf и gRPC файлы
-*│ ├── calculator_grpc.pb.go
-*│ ├── calculator.pb.go
-*│ └── calculator.proto
-*├── cmd/ # Точки входа
-*│ ├── agent/ # Агент
-*│ │ └── main.go
-*│ └── orchestrator/ # Оркестратор
-*│ └── main.go
-*├── internal/ # Внутренние модули
-*│ ├── agent/ # Логика агента
-*│ │ ├── agent.go
-*│ │ └── agent_test.go
-*│ └── orchestrator/ # Логика оркестратора
-*│ ├── orchestrator.go
-*│ ├── storage.go
-*│ └── tests/
-*│ ├── integration_test.go
-*│ └── module_test.go
-*├── models/ # Модели данных
-*│ └── models.go
-*├── pkg/ # Вспомогательные пакеты
-*│ └── calculator/ # Логика вычислений
-*│ ├── calculator.go
-*│ └── calculator_test.go
-*├── .gitignore
-*├── go.mod
-*├── go.sum
-*└── README.md
+* CALC_2GO/
+* ├── api/                        # Protobuf и gRPC файлы
+* │   ├── calculator_grpc.pb.go
+* │   ├── calculator.pb.go
+* │   └── calculator.proto
+* ├── cmd/
+* │   ├── agent/                  # Агент
+* │   │   └── main.go             # Точка входа для агента
+* │   └── orchestrator/           # Оркестратор
+* │       └── main.go             # Точка входа для оркестратора
+* ├── internal/
+* │   ├── agent/                  # Логика агента
+* │   │   ├── agent.go
+* │   │   └── agent_test.go
+* │   └── orchestrator/           # Логика оркестратора
+* │       ├── orchestrator.go
+* │       ├── storage.go
+* │       └── tests/
+* │           ├── integration_test.go
+* │           └── module_test.go
+* ├── models/                     # Модели данных
+* │   └── models.go
+* ├── pkg/
+* │   └── calculator/             # Логика вычислений
+* │       ├── calculator.go
+* │       └── calculator_test.go
+* ├── .gitignore                  # Игнорируемые файлы
+* ├── go.mod                      # Файл модуля Go
+* ├── go.sum
+* └── README.md
 
 
 ## Запуск проекта
