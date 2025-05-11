@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package calculator;
+option go_package = "github.com/Calc_2GO/api"; 
+
+service Calculator {
+    rpc GetTask(TaskRequest) returns (Task);
+    rpc SubmitResult(Result) returns (ResultResponse);
+    rpc GetTaskResult(TaskResultRequest) returns (TaskResultResponse);
+}
+
+message TaskResultRequest {
+    int32 task_id = 1;
+}
+
+message TaskResultResponse {
+    double result = 1;
+    string status = 2; // "success", "pending", "error"
+}
+message TaskRequest {}
+
+// Описание задачи
+message Task {
+    int32 id = 1;       // ID задачи
+    double arg1 = 2;    // Первый аргумент
+    double arg2 = 3;    // Второй аргумент
+    string operation = 4; // Операция (+, -, *, /)
+    int64 user_id = 5;   // ID пользователя
+    int32 expression_id = 6; // ID выражения
+}
+
+// Результат вычисления
+message Result {
+    int32 id = 1;      // ID задачи
+    double result = 2; // Результат
+}
+
+// Ответ на отправку результата
+message ResultResponse {
+    bool success = 1; // Успешно ли принят результат
+}
